@@ -1,19 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700);
-html {
-    height: 100%;
-    text-decoration: none;
-}
-
-span h1 {
-    float: left;
-    display: inline;
-}
-
-span .search {
-    margin: auto;
-    float: left;
-}
 
 body,
 html {
@@ -28,8 +13,19 @@ html {
     background: linear-gradient(45deg, #C491E1 10%, #FFDE92 100%);
     color: rgba(255, 255, 255, 0.9);
     background-attachment: fixed;
-    // background: #FFF;
+    text-decoration: none;
 }
+
+span h1 {
+    float: left;
+    display: inline;
+}
+
+span .search {
+    margin: auto;
+    float: left;
+}
+
 
 button,
 button:focus {
@@ -43,7 +39,6 @@ button:focus {
     margin-top: 6px;
     color: rgba(0,0,0,0.6);
     font-size: 3rem;
-    // font-family: 'Droid Serif', serif;
     font-family: 'Fira Sans', sans-serif;
     -webkit-user-select: none;
     /* Chrome all / Safari all */
@@ -211,8 +206,7 @@ a,
 a:active,
 a:hover,
 a:visited,
-li,
-body {
+a:link {
     text-decoration: none;
 }
 

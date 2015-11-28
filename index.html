@@ -8,7 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.0.0/annyang.min.js"></script>
     <!-- Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-    <script src="js/truncate.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -55,12 +54,12 @@
                 </div>
             </div>
             <ul id="results">
-                <div ng-repeat="item in results" ng-click="removeItem($index)">
+                <div ng-repeat="item in results">
                     <a href="{{item.page}}" target="_blank">
                         <li>
                             <h1 class="number">{{$index+1}}.</h1>
                             <h1>{{item.title}}</h1>
-                            <p>{{item.extract | characters:120 }}</p>
+                            <p>{{item.extract}}</p>
                         </li>
                     </a>
                 </div>
