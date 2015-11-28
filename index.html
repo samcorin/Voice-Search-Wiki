@@ -1,0 +1,79 @@
+<!doctype html>
+<html ng-app="wikiApp">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.0.0/annyang.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script src="js/truncate.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div ng-controller="wikiCtrl">
+        <header>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1" id="modal-btn">Wikipedia Viewer</button>
+            <form ng-submit="search()" class="style-4 search" id="search">
+                <input type="text" class="" placeholder="Seach..." onfocus="" ng-model='title' />
+            </form>
+        </header>
+        <div class='container list'>
+            <div class="modal fade" id="modal-1">
+                <div class="vertical-alignment-helper">
+                    <div class='modal-dialog vertical-align-center'>
+                        <div class='modal-content'>
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2 class='modal-title text-center'>Wikipedia Voice search</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div>You might be wondering how to use this. The commands are simple:</div>
+                                <ul class="bullets">
+                                    <li>
+                                        <h4>"Search for kittens"</h4></li>
+                                    <li>
+                                        <h4>"Open number 4"</h4></li>
+                                    <li>
+                                        <h4>"Commands"</h4></li>
+                                    <li>
+                                        <h4>"New search"</h4></li>
+                                    <li>
+                                        <h4><strong>"Close"</strong> this modal</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="" class="btn btn-default closes" data-dismiss="modal" style="color: white;">Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul id="results">
+                <div ng-repeat="item in results" ng-click="removeItem($index)">
+                    <a href="{{item.page}}" target="_blank">
+                        <li>
+                            <h1 class="number">{{$index+1}}.</h1>
+                            <h1>{{item.title}}</h1>
+                            <p>{{item.extract | characters:120 }}</p>
+                        </li>
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('#modal-btn').trigger('click');
+        }, 1000);
+    })
+    </script>
+</body>
+
+</html>
