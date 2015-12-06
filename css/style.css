@@ -16,10 +16,10 @@ html {
     text-decoration: none;
 }
 
-span h1 {
-    float: left;
-    display: inline;
-}
+// span h1 {
+//     float: left;
+//     display: inline;
+// }
 
 span .search {
     margin: auto;
@@ -34,8 +34,8 @@ button:focus {
 }
 
 #modal-btn {
-    display: inline-block;
-    position: fixed;
+    // display: inline-block;
+    // position: fixed;
     margin-top: 6px;
     color: rgba(0,0,0,0.6);
     font-size: 3rem;

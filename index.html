@@ -11,19 +11,46 @@
     <script src="js/app.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css" media="screen">
+        #history {
+
+        }
+    </style>
 </head>
 
 <body>
     <div ng-controller="wikiCtrl">
         <header>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1" id="modal-btn">Wikipedia Viewer</button>
-            <form ng-submit="search()" class="style-4 search" id="search">
-                <input type="text" class="" placeholder="Seach..." onfocus="" ng-model='title' />
-            </form>
-            <!-- Add history -->
-            <div ng-repeat="item in history">
-                    <div data-id="{{$index}}" style="margin-top:50px;" ng-click="searchHistory($event)">{{item.title}}</div>
-            </div>
+            
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1" id="modal-btn">Wikipedia Viewer</button>
+                
+
+                <!-- Dropdown -->
+                <div class="btn-group">
+                <!-- ng disable if history array is empty -->
+                <button ng-class="{'disabled': history.length==0}" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="history">History
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li ng-repeat="item in history">
+                        <div data-id="{{$index}}" ng-click="searchHistory($event)">{{item.title}}
+                        </div>
+                    </li>
+
+                  </ul>
+                </div>
+                <!-- <button type="button" class="btn" id="history">History</button> -->
+                
+
+                <form ng-submit="search()" class="style-4 search" id="search">
+                    <input type="text" class="" placeholder="Seach..." onfocus="" ng-model='title' />
+                </form>
+
+                <!-- Add history -->
+                <!-- <div ng-repeat="item in history">
+                        <div data-id="{{$index}}" style="margin-top:50px;" ng-click="searchHistory($event)">{{item.title}}</div>
+                </div>
+ -->
         </header>
         <div class='container list'>
             <div class="modal fade" id="modal-1">

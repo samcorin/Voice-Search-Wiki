@@ -17,3 +17,6 @@ Freecodecamp Zipline challenge
 
 ## TODO
   - [ ] ...
+- History disabled on empty
+- position search field
+- 
