@@ -122,7 +122,7 @@ h1 {
 
 ul {
     margin: auto;
-    width: 55%;
+    width: 75%;
     padding: 5px;
     list-style-type: disc;
     position: relative;
@@ -139,7 +139,7 @@ ul {
 #results {
     list-style-type: none;
     display: block;
-    width: 60%;
+    width: 75%;
     margin-top: 65px;
 }
 
@@ -160,6 +160,43 @@ ul {
         width: 100%;
         padding: 0;
         margin: 0;
+        margin-top: 70px;
+    }
+    ul #results {
+        margin: 0;
+        margin-top: 75px;
+    }
+    li p {
+        font-size: 12px;
+    }
+    .number {
+        margin-top: 25px;
+    }
+    
+    .style-4 input[type="text"] {
+        width: 50%;
+        float: right;
+        padding-top: 0 !important;
+    }
+    #modal-btn {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    ul {
+        // width: 75%;
+        margin: 10px;
+    }
+    #modal-1 {
+        width: 100%;
+        ;
+    }
+    #results {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 70px;
     }
     ul #results {
         margin: 0;
@@ -171,17 +208,7 @@ ul {
     .number {
         margin-top: 0;
     }
-    h1 {
-        margin-top: 10px;
-    }
-    .style-4 input[type="text"] {
-        width: 50%;
-        float: right;
-        padding-top: 0 !important;
-    }
-    #modal-btn {
-        font-size: 2.6rem;
-    }
+
 }
 
 li {
@@ -318,4 +345,5 @@ input:focus:-ms-input-placeholder {
     display: inline;
     float: left;
     font-size: 5rem;
+    margin-top: 25px;
 }

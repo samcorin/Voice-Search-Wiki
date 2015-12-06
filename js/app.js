@@ -5,21 +5,53 @@ angular.module('wikiApp', ['ngAnimate'])
     $scope.items = [];
     $scope.results = [];
     $scope.searchArray = [];
+    $scope.history = [];
     $scope.number_conversion = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
     $scope.linkOpener = function(link) {
         $window.open(link, '_blank');
+    };
+
+    // History
+    $scope.getId = function(array, title) {
+        console.log(array, title);
+        // console.log(array.hasOwnProperty())
+        if (!array.some(function(e,i) { return e.title == title })) {
+            console.log("Adding");
+            $scope.history.push({
+                title: title,
+            });
+        } else {
+            console.log("Not adding");
+        }
+    }
+
+    $scope.searchHistory = function(e) {
+
+        var id = $(e.target).data('id');
+        console.log("ID : " + id);
+        
+        $scope.title = $scope.history[id]['title'];
+        console.log("title: " + $scope.title);
+        $scope.search();
     };
     $scope.search = function(val) {
         $scope.results = [];
         var api = 'http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
         var cb = '&callback=JSON_CALLBACK';
         var page = 'http://en.wikipedia.org/?curid=';
+        // console.log("Link: " + api + $scope.title + cb);
         $http.jsonp(api + $scope.title + cb)
             .success(function(data) {
                 var results = data.query.pages;
                 $scope.searchArray = [];
-                angular.forEach(results, function(v, k) {
+                
+                // History
+                $scope.getId($scope.history, $scope.title);
+
+                angular.forEach(results, function(v, k) { 
+                    // console.log(v,k);
                     $scope.searchArray.push(page + v.pageid);
+                    // console.log('v == ' + v.pageid);
                     $scope.results.push({
                         title: v.title.substring(0,30),
                         page: page + v.pageid,

@@ -20,6 +20,10 @@
             <form ng-submit="search()" class="style-4 search" id="search">
                 <input type="text" class="" placeholder="Seach..." onfocus="" ng-model='title' />
             </form>
+            <!-- Add history -->
+            <div ng-repeat="item in history">
+                    <div data-id="{{$index}}" style="margin-top:50px;" ng-click="searchHistory($event)">{{item.title}}</div>
+            </div>
         </header>
         <div class='container list'>
             <div class="modal fade" id="modal-1">
