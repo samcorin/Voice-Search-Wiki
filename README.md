@@ -1,13 +1,16 @@
 # Speech-Enabled-Wikipedia-Viewer
 Freecodecamp's [Build a Wikipedia Viewer](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer) Zipline.
 
-The first iteration looked and behaved nothing like the current version. What began as a static search and here's-your-results, evolved into an obsession to bring convenience to the world. Ideally, you'd give it a try and let me 
+The voice commands were made possible by Annyang.js.
+
+The first iteration looked and behaved nothing like the current version. What began as a static search and here's-your-results, evolved into an obsession to bring convenience to the world. Feedback very welcome. 
+
 
 ## Features
 
-	- Voice commands
-	- Responsive design
-	- Clickable search History
+  - Voice commands
+  - Responsive design
+  - Clickable search History
 
 ### Voice Commands
 
@@ -18,10 +21,9 @@ The first iteration looked and behaved nothing like the current version. What be
   - "Commands”
 	- Show menu
 		  
-
 ### TODO
  
 - [X] History disabled on empty
-- [] position search field
-- [] Improve results show window
-- [] background
+- [ ] position search field
+- [ ] Improve results show window
+- [ ] background
