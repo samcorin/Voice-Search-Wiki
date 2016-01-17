@@ -1,5 +1,6 @@
-# Wikipedia-Viewer
-Freecodecamp Zipline challenge
+# Speech-Enabled-Wikipedia-Viewer
+Freecodecamp's [Build a Wikipedia Viewer](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer) Zipline.
+
 
 # Features
 - Voice commands
@@ -19,6 +20,10 @@ Freecodecamp Zipline challenge
   - [ ] ...
 - History disabled on empty
 - position search field
+<<<<<<< HEAD
 - Improve results show window
 - background
 - 
+=======
+- 
+>>>>>>> c454826c299c02f817213bdab99cd44182bc7929
