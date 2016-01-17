@@ -16,21 +16,19 @@ html {
     text-decoration: none;
 }
 
-// span h1 {
-//     float: left;
-//     display: inline;
-// }
-
 span .search {
     margin: auto;
     float: left;
 }
 
-
 button,
 button:focus {
     outline: 0 !important;
     box-shadow: none !important;
+}
+
+.history {
+    background: green;
 }
 
 #modal-btn {
@@ -143,6 +141,10 @@ ul {
     margin-top: 65px;
 }
 
+.history-list {
+    margin: 0;
+}
+
 #search {
     position: fixed;
     right: 10px;
@@ -167,19 +169,22 @@ ul {
         margin-top: 75px;
     }
     li p {
-        font-size: 12px;
+        font-size: 14px;
     }
     .number {
         margin-top: 25px;
     }
     
     .style-4 input[type="text"] {
-        width: 50%;
+        width: 45%;
         float: right;
         padding-top: 0 !important;
     }
     #modal-btn {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
+    }
+    .btn-group {
+        visibility: hidden;
     }
 }
 
@@ -247,12 +252,12 @@ a:link {
 */
 
 .ng-enter {
-    -webkit-transition: 0.4s;
+    -webkit-transition: 0.3s;
     -webkit-transform: scale(0);
 }
 
 .ng-enter-stagger {
-    transition-delay: 200ms;
+    transition-delay: 180ms;
 }
 
 .ng-enter-active {
@@ -283,9 +288,10 @@ a:link {
     width: 200px;
     transition: opacity 0.4s;
     font-size: 2em;
-    // color: #A4A4A4;
     color: rgba(0,0,0,0.3);
     opacity: .5;
+    position: fixed;
+    top: 0px;
     right: 10px;
 }
 
@@ -344,6 +350,6 @@ input:focus:-ms-input-placeholder {
 .number {
     display: inline;
     float: left;
-    font-size: 5rem;
-    margin-top: 25px;
+    font-size: 4rem;
+    margin-top: 30px;
 }

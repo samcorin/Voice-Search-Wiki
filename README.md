@@ -19,4 +19,6 @@ Freecodecamp Zipline challenge
   - [ ] ...
 - History disabled on empty
 - position search field
+- Improve results show window
+- background
 - 

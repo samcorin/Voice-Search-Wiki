@@ -11,10 +11,8 @@ angular.module('wikiApp', ['ngAnimate'])
         $window.open(link, '_blank');
     };
 
-    // History
     $scope.getId = function(array, title) {
         console.log(array, title);
-        // console.log(array.hasOwnProperty())
         if (!array.some(function(e,i) { return e.title == title })) {
             console.log("Adding");
             $scope.history.push({
@@ -39,19 +37,15 @@ angular.module('wikiApp', ['ngAnimate'])
         var api = 'http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
         var cb = '&callback=JSON_CALLBACK';
         var page = 'http://en.wikipedia.org/?curid=';
-        // console.log("Link: " + api + $scope.title + cb);
         $http.jsonp(api + $scope.title + cb)
             .success(function(data) {
                 var results = data.query.pages;
                 $scope.searchArray = [];
                 
-                // History
                 $scope.getId($scope.history, $scope.title);
 
                 angular.forEach(results, function(v, k) { 
-                    // console.log(v,k);
                     $scope.searchArray.push(page + v.pageid);
-                    // console.log('v == ' + v.pageid);
                     $scope.results.push({
                         title: v.title.substring(0,30),
                         page: page + v.pageid,
@@ -60,7 +54,6 @@ angular.module('wikiApp', ['ngAnimate'])
                 })
             })
     }
-    // Voice commands
     var commands = {
         'search for *val': function(val) {
             $scope.title = val;
