@@ -1,5 +1,5 @@
 # Speech-Enabled-Wikipedia-Viewer
-Freecodecamp's [Zipline challenge](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer)
+Freecodecamp's [Build a Wikipedia Viewer](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer) Zipline.
 
 # Features
 - Voice commands
